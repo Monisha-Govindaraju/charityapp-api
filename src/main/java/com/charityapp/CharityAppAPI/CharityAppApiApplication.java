@@ -1,4 +1,4 @@
-package com.charityapp.CharityAppAPI;
+package com.charityapp.charityappapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,6 +8,7 @@ public class CharityAppApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CharityAppApiApplication.class, args);
+		System.out.println("HELLO");
 	}
 
 }
