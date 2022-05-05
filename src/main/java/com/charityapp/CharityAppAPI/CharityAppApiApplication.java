@@ -8,7 +8,7 @@ public class CharityAppApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CharityAppApiApplication.class, args);
-		System.out.println("HELLO");
+		System.out.println("HELLO MONISHA");
 	}
 
 }
