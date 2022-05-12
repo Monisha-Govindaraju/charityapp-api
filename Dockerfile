@@ -1,0 +1,4 @@
+FROM openjdk:17-jdk
+VOLUME/tmp
+copy target/*.jar app.jar
+ENTRYPOINT["java","-jar",/app.jar"]

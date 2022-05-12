@@ -20,6 +20,6 @@ public class UserValidator {
 		} else {
 			throw new Exception("The mobile number should contain 10 digits");
 		}
-		System.out.println("You have registerd successfully");
+		System.out.println("You have registered successfully");
 	}
 }
