@@ -1,0 +1,1 @@
+web: java -Xms150M -jar target/CharityApp-API-0.0.1-SNAPSHOT.jar
