@@ -1,4 +1,5 @@
 package com.charityapp.charityappapi.controller;
+
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,24 +13,23 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.charityapp.charityappapi.dao.DonateRepository;
+import com.charityapp.charityappapi.dao.CharityTrustRepository;
 import com.charityapp.charityappapi.dto.MessageDTO;
-import com.charityapp.charityappapi.model.Donate;
-import com.charityapp.charityappapi.service.DonateService;
+import com.charityapp.charityappapi.model.CharityTrust;
+import com.charityapp.charityappapi.service.CharityTrustService;
 
 
 @RestController
-public class DonateController {
+public class CharityTrustController {
 	@Autowired
-	DonateRepository donateRepository;
+	CharityTrustRepository trustRepository;
 	
 	@Autowired
-	DonateService donateService;
-	@PostMapping("donate/save")
-	public ResponseEntity<?> save(@RequestBody Donate donate) {
+	CharityTrustService trustService;
+	@PostMapping("trust/save")
+	public ResponseEntity<?> save(@RequestBody CharityTrust trust) {
 		try {
-			System.out.println("donate"+donate);
-			donateService.save(donate);
+			trustService.save(trust);
 			MessageDTO message = new MessageDTO("Success");
 			return new ResponseEntity<>(message, HttpStatus.OK);
 		} catch (Exception e) {
@@ -37,14 +37,14 @@ public class DonateController {
 			return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
 		}
 	}
-	@GetMapping("donate/list")
-	public List<Donate> findAll() {
-		List<Donate> donatelist = null;
+	@GetMapping("trust/list")
+	public List<CharityTrust> findAll() {
+		List<CharityTrust> trustlist = null;
 		try {
-			donatelist = donateService.findAll();
+			trustlist = trustService.findAll();
 		} catch (Exception e) {
 			e.getMessage();
 		}
-		return donatelist;
+		return trustlist;
 	}
 }

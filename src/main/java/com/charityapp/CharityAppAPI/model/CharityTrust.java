@@ -10,18 +10,21 @@ import lombok.ToString;
 
 @Data
 @ToString
-@Entity(name = "monisha_users")
-public class User {
+@Entity(name = "ecommerce_charity_trust")
+public class CharityTrust {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
-	@Column(name = "name")
-	private String name;
+	@Column(name = "organisation_name")
+	private String organisationname;
 	@Column(name = "email")
 	private String email;
-	@Column(name = "password")
-	private String password;
-	@Column(name = "mobile_number")
-	private String mobilenumber;
+	@Column(name = "address")
+	private String address;
+	@Column(name = "district")
+	private String district;
+	@Column(name = "state")
+	private String state;
+	
 }
